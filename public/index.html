@@ -6,21 +6,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Organize your closet and keep track of what you wear!">
-    <meta name="author" content="Tom Frazzitta, Timothy Dry, Alyssa Santopadre, Kris Jackson">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>Kelly's Closet</title>
+    <title>Blog - Business Casual - Start Bootstrap Theme</title>
 
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> <!-- load fontawesome -->
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
     <link href="css/delete-fade.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
@@ -36,7 +35,7 @@
 <body>
 
     <div class="brand">Kelly's Closet</div>
-    <!-- <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div> -->
+    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -57,12 +56,21 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                      <li><a href="home.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                      <li><a href="index.html">Closet</a></li>
-                      <li><a href="outfits.html">Outfits</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Information
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="home.html">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
 
+                    <li><a href="index.html">Closet</a></li>
+
+                    <li>
+                        <a href="outfits.html">Outfits</a>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="camera">Camera
                         <span class="caret"></span></a>
@@ -75,8 +83,8 @@
 
                         </ul>
                     </li>
-                    <li id="navmodal1">
-
+                    <li>
+                        <a href="/user">Login</a>
                     </li>
 
                 </ul>
@@ -85,19 +93,6 @@
         </div>
         <!-- /.container -->
     </nav>
-    <!-- modal for login -->
-    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content text-center">
-          <div id="tlogin">
-            <!-- modal content added here by jquery-->
-          </div>
-          <div class='mymodal'>
-          </div>
-
-        </div>
-      </div>
-    </div> <!-- end modal -->
 
     <div class="container">
 
@@ -105,8 +100,8 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">My
-                        <strong>Closet</strong>
+                    <h2 class="intro-text text-center">Company
+                        <strong>blog</strong>
                     </h2>
                     <hr>
                 </div>
@@ -133,6 +128,7 @@
                                 <input type="checkbox" name="wear" value="gym">gym-wear
                                 <input type="checkbox" name="wear" value="work">work
                                 <input type="checkbox" name="wear" value="formal">A night out
+                                 <!-- <input type="checkbox" name="wear" value="dress">sun dress -->
                                 <br><br>
                               </div>
                               <div id="season-align">
@@ -189,7 +185,8 @@
 
                       <!-- Carosel 1 -->
                       <div class="row">
-                        <div id="test1" class="col-md-12">
+                      <div class="col-md-1" class="small"></div>
+                        <div id="test1" class="col-md-9">
                           <div class="carousel slide multi-item-carousel" id="theCarousel">
                             <div class="carousel-inner" id="Carosel1">
                             <!-- This is the main container for the slides -->
@@ -203,7 +200,7 @@
                           </div>
                         </div>
 
-                      <div id="post" class="col-md-2">
+                      <div id="post" class="col-md-1">
                           <div id="sidebar-shirts"></div>
                           <div id="sidebar-pants"></div>
                           <div id="sidebar-shoes"></div>
@@ -217,7 +214,8 @@
                       <br><br>
                       <!-- Carosel 2 -->
                       <div class="row">
-                        <div id="test2" class="col-md-12">
+                      <div class="col-md-1" class="small"></div>
+                        <div id="test2" class="col-md-9">
                           <div class="carousel slide multi-item-carousel" id="theCarousel2">
                             <div class="carousel-inner" id="Carosel2">
                             <!-- This is the main container for the slides -->
@@ -236,7 +234,8 @@
                     <br><br>
                       <!-- Carosel 3 -->
                       <div class="row">
-                        <div  id="test3" class="col-md-12">
+                      <div class="col-md-1" class="small"></div>
+                        <div  id="test3" class="col-md-9">
                           <div class="carousel slide multi-item-carousel" id="theCarousel3">
                             <div class="carousel-inner" id="Carosel3">
                             <!-- This is the main container for the slides -->
@@ -294,16 +293,15 @@
 
     <!-- jQuery -->
    <!--  <script src="index.js"></script> -->
-   <script src="js/jquery.js"></script>
-
   <script src="java/camera-carousel-functionality.js"></script>
   <script src="java/display-images.js"></script>
   <script src="java/form.js"></script>
   <script src="java/auto-form.js"></script>
   <script src="java/weatherAPI.js"></script>
-  <script src="java/oauth.js"></script>
+  <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
+  <script src=”jquery.mobile.custom.min.js”></script>  
 
 </body>
 

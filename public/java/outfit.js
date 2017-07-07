@@ -62,24 +62,6 @@ console.log(data[0].outfitId)
 
 
 
-              //if(j===0){
-
-              //     $('#Carosel1')
-              //       .append('<div class="item active"><div data-id="'+data[i].outfitId+'" class="col-xs-4"><img src="data:image/jpeg;base64,'+ imgData + '"class="img-responsive center-block" value="shirts"/></div></div>');
-              // }
-              // else{
-              //      $('#Carosel1')
-              //        .append('<div class="item"><div class="col-xs-4"><img data-id="'+data[i].outfitId+'"src="data:image/jpeg;base64,'+ imgData + '"class="img-responsive center-block" value="shirts"/></div></div>');
-              //     }
-
-
-
-
-
-     // setTimeout(caroselFunction, 500);
-
-
-
 
 $(document).ready(function(){Get();})
 $(document).on("click", "#all-images", function() { Get();})

@@ -131,12 +131,14 @@ console.log(season)
 
 
 $(document).on("click", "img", function() {
-  $('#test1').removeClass('col-md-12');
-  $('#test2').removeClass('col-md-12');
-  $('#test3').removeClass('col-md-12');
-  $('#test2').addClass('col-md-9');
-  $('#test1').addClass('col-md-9');
-  $('#test3').addClass('col-md-9');
+  console.log("hello")
+  // $('#test1').removeClass('col-md-12');
+  // $('#test2').removeClass('col-md-12');
+  // $('#test3').removeClass('col-md-12');
+  $(".small").removeClass('.col-md-1');
+  // $('#test2').addClass('col-md-9');
+  // $('#test1').addClass('col-md-9');
+  // $('#test3').addClass('col-md-9');
   $("#post").show();
   var imageID = $(this).attr("data-id");
   var name= $(this).attr("value")
@@ -199,12 +201,12 @@ var shoesID = $("#shoes").attr("data-id")
         $("#sidebar-pants").empty();
         $("#sidebar-shirts").empty();
         $("#post").hide();
-        $('#test1').removeClass('col-md-9');
-        $('#test2').removeClass('col-md-9');
-        $('#test3').removeClass('col-md-9');
-        $('#test1').addClass('col-md-12');
-        $('#test2').addClass('col-md-12');
-        $('#test3').addClass('col-md-12');
+        // $('#test1').removeClass('col-md-9');
+        // $('#test2').removeClass('col-md-9');
+        // $('#test3').removeClass('col-md-9');
+        // $('#test1').addClass('col-md-12');
+        // $('#test2').addClass('col-md-12');
+        // $('#test3').addClass('col-md-12');
       });
 })
 
