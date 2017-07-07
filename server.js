@@ -1,10 +1,10 @@
 var express = require("express");
 var app = express();
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 var fs = require("fs");
 var morgan       = require('morgan');
 var passport = require('passport');
- var flash    = require('connect-flash');
+var flash    = require('connect-flash');
 var multer = require("multer");
 var upload = multer({dest: "./uploads"});
 var mongoose = require("mongoose");
@@ -64,6 +64,6 @@ require('./routes/routes.js')(app, passport); // load our routes and pass in our
 require("./routes/images.js")(app);
 require("./routes/outfits.js")(app);
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("The Magic happens on port "+ port);
 });
