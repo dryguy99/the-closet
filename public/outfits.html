@@ -19,118 +19,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
-
-
+    <link href="css/delete-fade.css" rel="stylesheet">
 
   </head>
 
   <body>
     <div class="container">
-<!--       <div class="jumbotron">
-        <div id="weather">
-          <div id="location"></div>
-          <div id="temp"></div>
-          <div id="desc"></div>
-        </div>
-        <form action="/" method="POST" enctype="multipart/form-data">
-          <input type="file" name="avatar" enctype="multipart/form-data"><br><br>
-          <div id="type-align">
-            <input type="checkbox" name="type" value="shoes">shoes
-            <input type="checkbox" name="type" value="pants">pants
-            <input type="checkbox" name="type" value="shirts">shirts
-          </div>
-          <br>
-          <div id="wear-align">
-            <input type="checkbox" name="wear" value="casual">Casual
-            <input type="checkbox" name="wear" value="gym">gym-wear
-            <input type="checkbox" name="wear" value="work">work
-            <input type="checkbox" name="wear" value="formal">A night out
-            <br><br>
-          </div>
-          <div id="season-align">
-            <input type="checkbox" name="season" value="summer">summer
-            <input type="checkbox" name="season" value="fall">fall
-            <input type="checkbox" name="season" value="winter">winter
-            <input type="checkbox" name="season" value="spring">Spring
-            <br><br>
-          </div>
-          <input type="submit" value="upload" id="file">
-          <br><br>
-        </form>
-        <button type="submit" id="all-images">Photos</button><br><br>
-        <div id="drop-align">
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Clothing Type
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a class="wear" value="casual">Casual</a></li>
-              <li><a class="wear" value="formal">Formal</a></li>
-              <li><a class="wear" value="gym" >Gym-Wear</a></li>
-              <li><a class="wear" value="work">Work</a></li>
-            </ul>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Season
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a class="season" value="summer">Summer</a></li>
-              <li><a class="season" value="winter">Winter</a></li>
-              <li><a class="season" value="fall" >Fall</a></li>
-              <li><a class="season" value="spring">Spring</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-</div> -->
-    <div class="jumbotron">
+      <div class="jumbotron">
          <h1>OUTFITS</h1>
-    </div>
+       </div>
+     </div>
 
-</div>
+                <!-- Carousel -->
+                <div class="col-lg-12 text-center">
 
+                    <div id="x" class="container">
+                    <!--   <h1>Use Bootstrap's carousel to show multiple items per slide.</h1> -->
 
-<div class="container-fluid">
-  <h1>Hello World!</h1>
+                      <!-- Carosel 1 -->
+                      <div class="row">
+                        <div id="test1" class="col-md-12">
+                          <div class="carousel slide multi-item-carousel" id="theCarousel">
+                            <div class="carousel-inner" id="Carosel1">
+                            <!-- This is the main container for the slides -->
 
-  <div class="row">
-    <div class="col-sm-3" style="background-color:lavender;">
-      <div id="outfit"></div>
-
-
-    </div>
-    <div class="col-sm-3" style="background-color:lavenderblush;"></div>
-    <div class="col-sm-3" style="background-color:lavender;"></div>
-    <div class="col-sm-3" style="background-color:lavender;"></div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="container">
-  <div class="row">
-    <div id="test1" class="col-md-12">
-      <div class="carousel slide multi-item-carousel" id="theCarousel">
-        <div class="carousel-inner" id="Carosel1">
-
-        </div>
-        <a class="left carousel-control" href="#theCarousel" data-slide="prev"></a>
-        <a class="right carousel-control" href="#theCarousel" data-slide="next"></a>
-      </div>
-    </div>
- </div>
-</div>
- -->
-
+                              <!--  Example item end -->
+                            </div>
+                            <a class="left carousel-control" href="#theCarousel" data-slide="prev"><!-- <i class="glyphicon glyphicon-chevron-left"></i> --></a>
+                            <a class="right carousel-control" href="#theCarousel" data-slide="next"><!-- <i class="glyphicon glyphicon-chevron-right"></i> --></a>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
 
   <script src="outfit.js"></script>
+  <script src="java/camera-carousel-functionality.js"></script>
+  <script src="java/auto-form.js"></script>
   <script src="java/oauth.js"></script>
-  <!-- <script src="index.js1"></script> -->
+
   </body>
 </html>

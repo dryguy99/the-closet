@@ -35,27 +35,6 @@ module.exports=function(app){
         BigArray.push(shoesArray);
   }
 
-
-// ///////////////////SAVE THE FILE TO MONGO AND TRANSFER TO THE FS
-//   app.post("/", upload.single("avatar"), function(req, res, next){
-//   console.log(req.file)
-//   req.file.type=req.body.type;
-//   req.file.wear=req.body.wear;
-//   req.file.season=req.body.season;
-//   var NewImage= new Image(req.file)
-//    NewImage.save(function(err,doc){
-//           if (err){
-//           console.log('err: ' + error);
-//           res.json('error: there was an error');
-//           }
-//           else{
-//          console.log(doc);
-//          res.redirect("/")
-//           }
-//      })
-// });
-
-// /////////////////////////////////////////////////
 ///////MULTIPLE UPLOADS////FIND OUT HOW TO DISPLAY}
   app.post("/", upload.array('file', 4) , function(req, res, next){
     console.log("req.user: " + req.user);
@@ -96,9 +75,9 @@ app.get("/one",function(req,res){
    })
 })
 
-///////////////////GRAB ALL THE OUTFITS
+///////////////////GRAB ALL THE IMAGES
 app.get("/all",function(req,res){
-  console.log(req.user._id)
+  //console.log(req.user._id)
     Image.find({userId: req.user._id}).exec(function(error,data){
        MakeArray(data);
        res.send(BigArray);
@@ -106,7 +85,7 @@ app.get("/all",function(req,res){
    })
 })
 
-///////////////////GRAB THE OUTFITS BY TYPE
+///////////////////GRAB THE IMAGES BY TYPE
 app.get("/wear/:id",function(req,res){
     Image.find({wear:req.params.id,userId:req.user._id}).exec(function(error,data){
     MakeArray(data)
@@ -115,7 +94,7 @@ app.get("/wear/:id",function(req,res){
 })
 })
 
-///////////////////GRAB THE OUTFITS BY SEASON
+///////////////////GRAB THE IMAGES BY SEASON
 app.get("/season/:id",function(req,res){
    console.log(req.params.id)
    Image.find({season:req.params.id,userId:req.user._id}).exec(function(error,data){
@@ -125,6 +104,51 @@ app.get("/season/:id",function(req,res){
   })
 
 })
+
+///////////////////DELETE THE IMAGES
+app.get("/delete", function(req, res) {
+  Image.remove().exec(function(error,data){
+     if(error){
+        res.send(error)
+      }
+      else{
+        res.send(data)
+      }
+   });
+})
+
+///////////////////DELETE ONE IMAGE
+app.post("/delete/:id", function(req, res) {
+  console.log(req.params.id)
+  fs.unlinkSync("./uploads/"+req.params.id);
+  Image.remove({filename:req.params.id}).exec(function(error,data){
+     if(error){
+        res.send(error)
+      }
+   });
+   Image.find({}).exec(function(error,data){
+       MakeArray(data);
+       res.send(BigArray);
+   })
+})
+
+
+
+
+
+///////////////////////////////////////////OUTFITS////////////////////////////////
+
+
+
+
+
+
+///////////////////OUTFITS PAGE
+app.get("/outfits", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/outfits.html"));
+
+});
+
 
 ///////////////////SAVE THE OUTFITS
 app.post("/single",function(req,res){
@@ -161,31 +185,18 @@ app.get("/single",function(req,res){
   })
 })
 
-///////////////////GRAB THE IMAGES
-app.get("/uploads/:id",function(req,res){
-
-    console.log("REQ " + req.params.id)
-    fs.readFile("./uploads/"+req.params.id, function(err, imageData){
-        if(err){
-          console.log(err+ "ERRRRRRRR");
-        }else{
-          var base64data = new Buffer(imageData, 'binary').toString('base64');
-          res.set({'Content-Type':'image/jpeg'});
-          res.send(base64data);
-        }
-    })
-})
-
-///////////////////DELETE THE IMAGES
-app.get("/delete", function(req, res) {
-  Image.remove().exec(function(error,data){
+///////////////////DELETE AN OUTFIT
+app.post("/erase/:id", function(req, res) {
+  console.log(req.params.id)
+  Outfit.remove({userId:req.user._id, outfitId:req.params.id}).exec(function(error,data){
      if(error){
         res.send(error)
       }
-      else{
-        res.send(data)
-      }
    });
+   Outfit.find({userId:req.user._id}).exec(function(error,data){
+       //MakeArray(data);
+       res.send(data);
+   })
 })
 
 
@@ -202,31 +213,20 @@ app.get("/del", function(req, res) {
 })
 
 
-///////////////////DELETE ONE IMAGE
-app.post("/delete/:id", function(req, res) {
-  console.log(req.params.id)
-  fs.unlinkSync("./uploads/"+req.params.id);
-  Image.remove({filename:req.params.id}).exec(function(error,data){
-     if(error){
-        res.send(error)
-      }
-   });
-   Image.find({}).exec(function(error,data){
-       MakeArray(data);
-       res.send(BigArray);
-   })
+///////////////////////////////////FILE SYESTEM ///////////////////////
+///////////////////GRAB THE IMAGES
+app.get("/uploads/:id",function(req,res){
+
+    console.log("REQ " + req.params.id)
+    fs.readFile("./uploads/"+req.params.id, function(err, imageData){
+        if(err){
+          console.log(err+ "ERRRRRRRR");
+        }else{
+          var base64data = new Buffer(imageData, 'binary').toString('base64');
+          res.set({'Content-Type':'image/jpeg'});
+          res.send(base64data);
+        }
+    })
 })
-
-
-
-
-
-///////////////////OUTFITS PAGE
-app.get("/outfits", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/outfits.html"));
-
-});
-
-
 
 }////MODULE END///////

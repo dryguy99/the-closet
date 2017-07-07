@@ -43,3 +43,15 @@ img {
 #rid-background{
    background-color: transparent;
 }
+
+#post{
+    height: 0;
+  }
+
+  #pants,#shirts,#shoes{
+    height:125px;
+  }
+
+.container{
+  height: 30%;
+}

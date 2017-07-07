@@ -10,7 +10,7 @@ var upload = multer({dest: "./uploads"});
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var session      = require('express-session');
-var configDB = require('./config/database.js');
+
 //fix cors errors
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -37,11 +37,11 @@ if (!process.env.MONGODB_URI){
     }
 require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
-//app.use(express.bodyParser({uploadDir:'./uploads'}));
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json())// parse application/json
 app.set('view engine', 'ejs'); // set up ejs for templating
-app.use('/', express.static("./public"));
+app.use(express.static("./public"));
 app.use(session({
     secret: 'ilovescotchscotchyscotchscotch',
     name: "K-Closet",
@@ -65,5 +65,5 @@ require("./routes/images.js")(app);
 require("./routes/outfits.js")(app);
 
 app.listen(3000, function() {
-  console.log("The Magic running on port "+ port);
+  console.log("The Magic happens on port "+ port);
 });

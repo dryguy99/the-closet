@@ -6,14 +6,14 @@ function myRoutes(app, passport) {
     // =====================================
     app.get('/user', function(req, res) {
       var loggedIn = false;
-      if (req.user) {
-        // logged in
-        loggedIn = true;
-        res.send(loggedIn);
-      } else {
-        // not logged in
-        res.send(loggedIn);
-      }
+    if (req.user) {
+      // logged in
+      loggedIn = true;
+      res.send(loggedIn);
+    } else {
+      // not logged in
+      res.send(loggedIn);
+    }
 
     });
 
@@ -106,9 +106,10 @@ function myRoutes(app, passport) {
     // =====================================
     // LOGOUT ==============================
     // =====================================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
+    app.get('/logout', function (req, res){
+      req.session.destroy(function (err) {
+      res.redirect('/'); //Inside a callback… bulletproof!
+      });
     });
 
     // =============================================================================

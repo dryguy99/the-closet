@@ -3,11 +3,11 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Organize your closet and keep track of what you wear!">
-    <meta name="author" content="Tom Frazzitta, Timothy Dry, Alyssa Santopadre, Kris Jackson">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Organize your closet and keep track of what you wear!">
+  <meta name="author" content="Tom Frazzitta, Timothy Dry, Alyssa Santopadre, Kris Jackson">
 
     <title>Kelly's Closet</title>
 
@@ -57,13 +57,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                      <li><a href="home.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                      <li><a href="index.html">Closet</a></li>
-                      <li><a href="outfits.html">Outfits</a></li>
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="index.html">Closet</a></li>
+                  <li><a href="outfits.html">Outfits</a></li>
 
-                    <li class="dropdown">
+                  <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="camera">Camera
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" id="rid-background">
@@ -86,18 +86,18 @@
         <!-- /.container -->
     </nav>
     <!-- modal for login -->
-    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content text-center">
-          <div id="tlogin">
-            <!-- modal content added here by jquery-->
-          </div>
-          <div class='mymodal'>
-          </div>
+        <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-center">
+              <div id="tlogin">
+                <!-- modal content added here by jquery-->
+              </div>
+              <div class='mymodal'>
+              </div>
 
-        </div>
-      </div>
-    </div> <!-- end modal -->
+            </div>
+          </div>
+        </div> <!-- end modal -->
 
     <div class="container">
 
@@ -133,6 +133,7 @@
                                 <input type="checkbox" name="wear" value="gym">gym-wear
                                 <input type="checkbox" name="wear" value="work">work
                                 <input type="checkbox" name="wear" value="formal">A night out
+                                 <!-- <input type="checkbox" name="wear" value="dress">sun dress -->
                                 <br><br>
                               </div>
                               <div id="season-align">
@@ -189,7 +190,8 @@
 
                       <!-- Carosel 1 -->
                       <div class="row">
-                        <div id="test1" class="col-md-12">
+                      <div class="col-md-1" class="small"></div>
+                        <div id="test1" class="col-md-9">
                           <div class="carousel slide multi-item-carousel" id="theCarousel">
                             <div class="carousel-inner" id="Carosel1">
                             <!-- This is the main container for the slides -->
@@ -203,7 +205,7 @@
                           </div>
                         </div>
 
-                      <div id="post" class="col-md-2">
+                      <div id="post" class="col-md-1">
                           <div id="sidebar-shirts"></div>
                           <div id="sidebar-pants"></div>
                           <div id="sidebar-shoes"></div>
@@ -217,7 +219,8 @@
                       <br><br>
                       <!-- Carosel 2 -->
                       <div class="row">
-                        <div id="test2" class="col-md-12">
+                      <div class="col-md-1" class="small"></div>
+                        <div id="test2" class="col-md-9">
                           <div class="carousel slide multi-item-carousel" id="theCarousel2">
                             <div class="carousel-inner" id="Carosel2">
                             <!-- This is the main container for the slides -->
@@ -236,7 +239,8 @@
                     <br><br>
                       <!-- Carosel 3 -->
                       <div class="row">
-                        <div  id="test3" class="col-md-12">
+                      <div class="col-md-1" class="small"></div>
+                        <div  id="test3" class="col-md-9">
                           <div class="carousel slide multi-item-carousel" id="theCarousel3">
                             <div class="carousel-inner" id="Carosel3">
                             <!-- This is the main container for the slides -->
@@ -294,16 +298,16 @@
 
     <!-- jQuery -->
    <!--  <script src="index.js"></script> -->
-   <script src="js/jquery.js"></script>
-
   <script src="java/camera-carousel-functionality.js"></script>
   <script src="java/display-images.js"></script>
   <script src="java/form.js"></script>
   <script src="java/auto-form.js"></script>
   <script src="java/weatherAPI.js"></script>
   <script src="java/oauth.js"></script>
+  <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
+  <script src="jquery.mobile.custom.min.js"></script>
 
 </body>
 
