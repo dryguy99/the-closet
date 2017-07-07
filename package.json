@@ -1,7 +1,7 @@
 {
   "name": "kellys-closet",
   "version": "2.0.0",
-  "description": "orginize your clothes by category and pic out your outfits virtually.  Look at the weather before choosing an outfit and save what clothing made up your outfits.",
+  "description": "organize your clothes by category and pic out your outfits virtually.  Look at the weather before choosing an outfit and save what clothing made up your outfits.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
