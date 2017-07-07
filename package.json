@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "scripts": {
+	"start": "node server"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dryguy99/the-closet.git"
@@ -42,8 +45,5 @@
   "engines": {
     "node": "6.11.0",
     "npm": "3.10.10"
-  },
-  "scripts": {
-	"start": "node server"
   }
 }
