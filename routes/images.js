@@ -37,7 +37,7 @@ module.exports=function(app){
 
 ///////MULTIPLE UPLOADS////FIND OUT HOW TO DISPLAY}
   app.post("/", upload.array('file', 4) , function(req, res, next){
-    console.log("req.user: " + req.user);
+    //console.log("req.user: " + req.user);
       for(i=0;i<req.files.length;i++){
 
         var NewImage= new Image ({
