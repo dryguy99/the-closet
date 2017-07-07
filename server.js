@@ -11,20 +11,6 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var session      = require('express-session');
 var configDB = require('./config/database.js');
-//fix cors errors
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-      res.send(200);
-    }
-    else {
-      next();
-    }
-};
-app.use(allowCrossDomain);
 mongoose.Promise = Promise;
 
 
@@ -41,7 +27,7 @@ app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json())// parse application/json
 app.set('view engine', 'ejs'); // set up ejs for templating
-app.use('/', express.static("./public"));
+app.use(express.static("./public"));
 app.use(session({
     secret: 'ilovescotchscotchyscotchscotch',
     name: "K-Closet",
