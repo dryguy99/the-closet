@@ -106,9 +106,10 @@ function myRoutes(app, passport) {
     // =====================================
     // LOGOUT ==============================
     // =====================================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
+    app.get('/logout', function (req, res){
+      req.session.destroy(function (err) {
+      res.redirect('/'); //Inside a callback… bulletproof!
+      });
     });
 
     // =============================================================================
