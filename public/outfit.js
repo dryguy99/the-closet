@@ -31,7 +31,7 @@ console.log(data[0].outfitId)
 
   var noImage= '<div class="item active"><div class="col-xs-4"><h3>Save an Outfit from your closet</h3></div></div>';
   var itemActive = '<div class="item active"><div class="col-xs-4">';
-  
+
 
   var item = '<div class="item"><div class="col-xs-4">';
   var delHover= '<div class="middle"><div class="text">Delete</div></div></div>';
@@ -44,7 +44,7 @@ console.log(data[0].outfitId)
               }
 
       for(var i = 0; i < data.length; i++){
-          (function(i){  
+          (function(i){
                 $.get('/uploads/' + data[i].Matches[0]).done(function(imgData1){
                 $.get('/uploads/' + data[i].Matches[1]).done(function(imgData2){
                 $.get('/uploads/' + data[i].Matches[2]).done(function(imgData3){
@@ -52,7 +52,7 @@ console.log(data[0].outfitId)
 
               $('#Carosel1')
                 .append(itemActive+'<div data-id="'+data[i].outfitId+'" matches="'+data[i].Matches+'" ><img src="data:image/jpeg;base64,'+ imgData1 + '"class="img-responsive center-block" value="shirts"/><img src="data:image/jpeg;base64,'+ imgData2 + '"class="img-responsive center-block" value="shirts"/><img src="data:image/jpeg;base64,'+ imgData3 + '"class="img-responsive center-block" value="shirts"/>'+delButton)
-                  
+
               }
               else{
 
@@ -65,7 +65,7 @@ console.log(data[0].outfitId)
       })(i)
     };
  setTimeout(caroselFunction, 500);
-}    
+}
 
 
 
@@ -99,10 +99,3 @@ $(document).on("click", ".col-xs-4", function() {
               setTimeout(DisplayImage(data),1350);
           });
 });
-
-
-
-
-
-
-

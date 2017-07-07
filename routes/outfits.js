@@ -15,7 +15,7 @@ var base64data;
 module.exports=function(app){
 
 app.post("/single",function(req,res){
-//var randomId= Math.floor((Math.random() * 1000) + 1)
+
   var NewOutfit = new Outfit ({
       shirtsMatch: req.body.shirts,
       pantsMatch: req.body.pants,

@@ -77,7 +77,7 @@ app.get("/one",function(req,res){
 
 ///////////////////GRAB ALL THE IMAGES
 app.get("/all",function(req,res){
-  console.log(req.user._id)
+  //console.log(req.user._id)
     Image.find({userId: req.user._id}).exec(function(error,data){
        MakeArray(data);
        res.send(BigArray);
@@ -228,22 +228,5 @@ app.get("/uploads/:id",function(req,res){
         }
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }////MODULE END///////
