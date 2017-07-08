@@ -1,0 +1,78 @@
+
+.col-xs-4 {
+    position: relative;
+}
+
+img {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+ transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 91%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.col-xs-4:hover .image {
+  opacity: 0.8;
+}
+
+.col-xs-4:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 25px;
+}
+
+
+#video{
+  position: relative;
+    /*left: -80px;*/
+}
+
+#rid-background{
+   background-color: transparent;
+}
+
+#post{
+    height: 0;
+  }
+
+  #pants,#shirts,#shoes{
+    height:125px;
+  }
+
+.container{
+  height: 30%;
+}
+
+img{
+  height:50px;
+  width:50px;
+  color: yellow;
+}
+
+piece:target{
+  display: block;
+}
+
+#sun{
+  color: yellow;
+}
+
+.dropdown-menu {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
