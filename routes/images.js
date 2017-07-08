@@ -37,7 +37,7 @@ module.exports=function(app){
 
 ///////MULTIPLE UPLOADS////FIND OUT HOW TO DISPLAY}
   app.post("/", upload.array('file', 4) , function(req, res, next){
-    //console.log("req.user: " + req.user);
+    console.log("req.user: " + req.user);
       for(i=0;i<req.files.length;i++){
 
         var NewImage= new Image ({
@@ -77,15 +77,28 @@ app.get("/one",function(req,res){
 
 ///////////////////GRAB ALL THE IMAGES
 app.get("/all",function(req,res){
-  console.log(req.user._id)
+    if(req.user==undefined){
+        BigArray=[];
+        console.log("YOU ARE NOT LOGGED IN");
+        shirtsArray.length==undefined;
+        pantsArray.length==undefined;
+        shirtsArray.length==undefined;
+        messageArray="Please Log In";
+        BigArray.push(shirtsArray,pantsArray,shoesArray,messageArray);
+        res.send(BigArray)
+
+    }
+    else{
     Image.find({userId: req.user._id}).exec(function(error,data){
+      console.log("YOU ARE LOGGED IN");
        MakeArray(data);
-       res.send(BigArray);
-       //console.log(BigArray)
+      res.send(BigArray);
+      //console.log(BigArray)
    })
+  }
 })
 
-///////////////////GRAB THE OUTFITS BY TYPE
+///////////////////GRAB THE IMAGES BY TYPE
 app.get("/wear/:id",function(req,res){
     Image.find({wear:req.params.id,userId:req.user._id}).exec(function(error,data){
     MakeArray(data)
@@ -94,7 +107,7 @@ app.get("/wear/:id",function(req,res){
 })
 })
 
-///////////////////GRAB THE OUTFITS BY SEASON
+///////////////////GRAB THE IMAGES BY SEASON
 app.get("/season/:id",function(req,res){
    console.log(req.params.id)
    Image.find({season:req.params.id,userId:req.user._id}).exec(function(error,data){
@@ -228,5 +241,22 @@ app.get("/uploads/:id",function(req,res){
         }
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }////MODULE END///////

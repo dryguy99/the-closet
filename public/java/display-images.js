@@ -7,14 +7,22 @@ function DisplayImage(data){
   var pantsArray  = data[1];
   var shoesArray  = data[2];
   var noImage= '<div class="item active"><div class="col-xs-4"><h3>Please insert an image</h3></div></div>';
+  var SignIn= '<a href="/user"><div class="item active"><div class="col-xs-4"></div><div class="col-xs-4"><h3 class="text-center">Please Login</h3></div></div></a>';
   var itemActive = '<div class="item active"><div class="col-xs-4">';
   var item = '<div class="item"><div class="col-xs-4">';
   var  delHover= '<div class="middle"><div class="text">Delete</div></div></div>';
 
          ////////IF NO IMAGES IN THE CAROUSEL////
-      if(shirtsArray.length==0){$('#Carosel1').html(noImage);}
-      if(pantsArray.length==0){$('#Carosel2').html(noImage);}
-      if(shoesArray.length==0){$('#Carosel3').html(noImage);}
+      if
+        (data.length==4){$('#Carosel1').html(SignIn);}
+
+      else{
+        if(shirtsArray.length==0){$('#Carosel1').html(noImage);}
+        if(pantsArray.length==0){$('#Carosel2').html(noImage);}
+        if(shoesArray.length==0){$('#Carosel3').html(noImage);}
+      }
+
+
 
         ////////CAROUSEL 1////
       for(var i = 0; i < shirtsArray.length; i++){
@@ -53,7 +61,7 @@ function DisplayImage(data){
                     .append(item+'<img data-id="'+pantsArray[j].filename+'"src="data:image/jpeg;base64,'+ imgData + '"class="img-responsive center-block" value="pants"/>'+delHover)
                    // .append('<div class="item"><div class="col-xs-4"><img data-id="'+pantsArray[j].filename+'"src="data:image/jpeg;base64,'+ imgData + '"class="img-responsive center-block" value="shirts"/><div class="middle"><div class="text">Delete</div></div></div>');
                //.append('<div class="item"><div class="col-xs-4"><img src="data:image/jpeg;base64,'+imgData+'" class="img-responsive"></div></div>');
-              }     
+              }
             })
           })(j)
         };
@@ -62,7 +70,7 @@ function DisplayImage(data){
           (function(k){
             $.get('/uploads/' + shoesArray[k].filename).done(function(imgData){
              console.log('k is ' + k);
-                
+
           if(k===0){
 
               $('#Carosel3')
@@ -74,13 +82,14 @@ function DisplayImage(data){
                $('#Carosel3')
                 .append(item+'<img data-id="'+shoesArray[k].filename+'"src="data:image/jpeg;base64,'+ imgData + '"class="img-responsive center-block" value="shoes"/>'+delHover)
                 //.append('<div class="item"><div class="col-xs-4"><img data-id="'+shoesArray[k].filename+'"src="data:image/jpeg;base64,'+ imgData + '"class="img-responsive center-block" value="shirts"/><div class="middle"><div class="text">Delete</div></div></div>');
-              }               
+              }
             })
           })(k)
         };
   setTimeout(caroselFunction, 500);
+  setTimeout(SwipeCarosel, 500);
   }
-  
+
 
 
 ////////////////////////////////OnClick Functions///////////////////////////////////////////////////////////////
@@ -96,6 +105,8 @@ $("#Carosel3").empty();
         url: "/all"
       }).done(function(data) {
             DisplayImage(data);
+            // console.log(data.length)
+            console.log(data)
       })
   }
 
@@ -131,12 +142,14 @@ console.log(season)
 
 
 $(document).on("click", "img", function() {
-  $('#test1').removeClass('col-md-12');
-  $('#test2').removeClass('col-md-12');
-  $('#test3').removeClass('col-md-12');
-  $('#test2').addClass('col-md-9');
-  $('#test1').addClass('col-md-9');
-  $('#test3').addClass('col-md-9');
+  // $('#test1').removeClass('col-md-12');
+  // $('#test2').removeClass('col-md-12');
+  // $('#post').removeClass('col-md-2');
+  // $(".small").removeClass('.col-md-1');
+  // $(".small").hide();
+  //$('#post').addClass('col-md-4');
+  // $('#test1').addClass('col-md-9');
+  // $('#test3').addClass('col-md-9');
   $("#post").show();
   var imageID = $(this).attr("data-id");
   var name= $(this).attr("value")
@@ -152,7 +165,7 @@ function sideImage(imageID,name){
   $("#sidebar-save").empty();
   $("#sidebar-clear").empty();
    $.get('/uploads/' +imageID).done(function(imgData){
-      $("#sidebar-"+name).html('<div class="item"><div class="col-xs-12"><img id="'+name+'" data-id="'+imageID+'"src="data:image/jpeg;base64,'+ imgData + '"/></div></div>'); 
+      $("#sidebar-"+name).html('<div class="item"><div class="col-xs-12"><img id="'+name+'" data-id="'+imageID+'"src="data:image/jpeg;base64,'+ imgData + '"/></div></div>');
       $("#sidebar-save").append("'<div class='item'><div class='col-xs-12'><button id='save'>save outfit</button></div></div>")
       $("#sidebar-close").append("'<div class='item'><div class='col-xs-12'><button id='close'>close</button></div></div>")
       $("#sidebar-clear").append("'<div class='item'><div class='col-xs-12'><button id='clear'>clear</button></div></div>")
@@ -199,12 +212,12 @@ var shoesID = $("#shoes").attr("data-id")
         $("#sidebar-pants").empty();
         $("#sidebar-shirts").empty();
         $("#post").hide();
-        $('#test1').removeClass('col-md-9');
-        $('#test2').removeClass('col-md-9');
-        $('#test3').removeClass('col-md-9');
-        $('#test1').addClass('col-md-12');
-        $('#test2').addClass('col-md-12');
-        $('#test3').addClass('col-md-12');
+        // $('#test1').removeClass('col-md-9');
+        // $('#test2').removeClass('col-md-9');
+        // $('#test3').removeClass('col-md-9');
+        // $('#test1').addClass('col-md-12');
+        // $('#test2').addClass('col-md-12');
+        // $('#test3').addClass('col-md-12');
       });
 })
 
