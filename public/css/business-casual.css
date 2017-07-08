@@ -12,7 +12,33 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
-
+.mymodal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/graphicbackground.jpg');
+  opacity: 0.2;
+  z-index: -1;
+}
+.modal-content {
+  z-index: 10;
+  font-size: 2vw;
+  font-weight: 700;
+}
+#tlogin {
+  margin-bottom: 1vw;
+}
+#tlogin > a {
+  margin-right: 1vw;
+}
+#mycontainer {
+  width: 55vw;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0 auto;
+}
 h1,
 h2,
 h3,
@@ -37,7 +63,7 @@ hr {
 }
 
 .brand,
-.address-bar {        
+.address-bar {
     border: none;
     background: #fff;
     background: rgba(255,255,255,0.9);
@@ -70,7 +96,7 @@ hr {
 }
 
 .brand-name {
-    
+
     margin: 0;
     font-size: 4em;
 }

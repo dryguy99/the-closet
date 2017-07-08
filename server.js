@@ -50,6 +50,6 @@ require('./routes/routes.js')(app, passport); // load our routes and pass in our
 require("./routes/images.js")(app);
 require("./routes/outfits.js")(app);
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("The Magic running on port "+ port);
 });

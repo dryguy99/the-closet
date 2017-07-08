@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
 
-<head>
+    <meta charset="UTF-8">
+    <title>upload</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
-    <title>Blog - Business Casual - Start Bootstrap Theme</title>
-
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
- -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--     <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link href="css/delete-fade.css" rel="stylesheet">
+    
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+  </head>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+  <body>
+    <div class="container">
+    <div class="jumbotron " >
+         <h1 style="text-align: center">OUTFITS</h1>
+    </div>
+</div>
 
-<body>
-
-    <div class="brand">Kelly's Closet</div>
-    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -60,8 +53,26 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="index.html">Closet</a></li>
-                    <li><a href="outfits.html">Outfits</a></li>
-                    <li><a href="/user">Login</a></li>
+                    <li><a href="outfits-old.html">Outfits</a></li>
+
+                    <!-- Camera Button -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="camera">Camera
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="rid-background">
+                          <a id="download" download="image.png"><button type="button" id ="down" onclick="download()">Download</button></a>
+                       <!--    <button type="submit" id="video-button">Acecess Camera</button> <br><br>
+                          <button type="submit" id="video-close">Close Camera</button> <br><br> -->
+                          <video id="video" width="300" height="300" autoplay  type="file" enctype="multipart/form-data"></video>
+                          <canvas id="canvas" width="300" height="300"></canvas>
+
+                        </ul>
+                    </li>
+                    <!-- End Camera Button -->
+
+                    <li id="navmodal1">
+
+                    </li>
 
                 </ul>
             </div>
@@ -70,20 +81,29 @@
         <!-- /.container -->
     </nav>
 
-    <div class="container">
+    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-center">
+          <div id="tlogin">
+            <!-- modal content added here by jquery-->
+          </div>
+          <div class='mymodal'>
+          </div>
 
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Company
-                        <strong>blog</strong>
-                    </h2>
-                    <hr>
-                </div>
+        </div>
+      </div>
+    </div> <!-- end modal -->
 
 
- <!-- Carousel -->
+
+
+
+
+
+
+
+
+                <!-- Carousel -->
                 <div class="col-lg-12 text-center">
 
                     <div id="x" class="container">
@@ -110,25 +130,6 @@
 
 
 
-            </div>
-        </div>
-
-    </div>
-
-
-    <!-- /.container -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Kelly's Closet 2017</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -147,22 +148,11 @@
       </div>
     </div>
   </div>
+              
 
-    <!-- jQuery -->
-<!-- <script src="index.js"></script> -->
-  <script src="js/jquery.js"></script>
   <script src="java/outfit.js"></script>
   <script src="java/camera-carousel-functionality.js"></script>
   <script src="java/auto-form.js"></script>
-
-  <script src="java/display-images.js"></script>
-  <script src="java/form.js"></script>
-
-
-    <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src=”jquery.mobile.custom.min.js”></script>  
-
-</body>
-
+    <!-- <script src="index.js1"></script> -->
+  </body>
 </html>

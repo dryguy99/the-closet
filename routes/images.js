@@ -77,6 +77,8 @@ app.get("/one",function(req,res){
 
 ///////////////////GRAB ALL THE IMAGES
 app.get("/all",function(req,res){
+    console.log(req.body)
+
     if(req.user==undefined){
         BigArray=[];
         console.log("YOU ARE NOT LOGGED IN");

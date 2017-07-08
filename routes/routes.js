@@ -5,7 +5,16 @@ function myRoutes(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/user', function(req, res) {
-        res.render('index.ejs'); // load the index.ejs file
+      var loggedIn = false;
+      if (req.user) {
+        // logged in
+        loggedIn = true;
+        res.send(loggedIn);
+      } else {
+        // not logged in
+        res.send(loggedIn);
+      }
+
     });
 
     // =====================================
@@ -21,7 +30,7 @@ function myRoutes(app, passport) {
     // process the login form
     // process the login form
    app.post('/login', passport.authenticate('local-login', {
-       successRedirect : '/profile', // redirect to the secure profile section
+       successRedirect : '/', // redirect to the secure profile section
        failureRedirect : '/login', // redirect back to the signup page if there is an error
        failureFlash : true // allow flash messages
    }));
@@ -38,7 +47,7 @@ function myRoutes(app, passport) {
 
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
+        successRedirect : '/', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
@@ -49,9 +58,7 @@ function myRoutes(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
+        res.redirect('/');
     });
 
     // =====================================
@@ -63,7 +70,7 @@ function myRoutes(app, passport) {
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect : '/profile',
+            successRedirect : '/',
             failureRedirect : '/'
         }));
 
@@ -76,7 +83,7 @@ function myRoutes(app, passport) {
     // handle the callback after twitter has authenticated the user
     app.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
-            successRedirect : '/profile',
+            successRedirect : '/',
             failureRedirect : '/'
         }));
 
@@ -91,7 +98,7 @@ function myRoutes(app, passport) {
         // the callback after google has authenticated the user
         app.get('/auth/google/callback',
                 passport.authenticate('google', {
-                        successRedirect : '/profile',
+                        successRedirect : '/',
                         failureRedirect : '/'
                 }));
 
@@ -99,9 +106,10 @@ function myRoutes(app, passport) {
     // =====================================
     // LOGOUT ==============================
     // =====================================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
+    app.get('/logout', function (req, res){
+      req.session.destroy(function (err) {
+      res.redirect('/'); //Inside a callback… bulletproof!
+      });
     });
 
     // =============================================================================

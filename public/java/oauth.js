@@ -11,13 +11,45 @@ function checkUser() {
     console.log(response);
     if (response) {
       //display profile page
-      $('#navmodal1').html('<a href="/logout">Logout</a>');
+      $('#navmodal1').html('<a onclick="userLogout()">Logout</a>');
+      return true;
     } else{
       //display login options
       $('#navmodal1').html('<a id="navmodal" onclick="checkUser()" data-toggle="modal" data-target=".bs-modal-lg">Login</a>');
       $('#tlogin').html(loginInfo);
+      return false;
     }
   });
+}
+
+function userLogout() {
+  // console.log("userlogout");
+  // data = [shirtsArray=[1],
+  // pantsArray=[1],
+  // shirtsArray=[1],
+  // messageArray=["Please Log In"]];
+  // DisplayImage(data);
+  $("#Carosel2").empty();
+ $("#Carosel1").empty();
+ $("#Carosel3").empty();
+ 
+  $.get('./logout').done( function() {
+    window.location.replace("http://localhost:3000");
+  });
+
+     $.ajax({
+        method: "GET",
+        url: "/all",
+
+      }).done(function(data) {
+        data.length==4;
+      DisplayImage(data);
+      // console.log(data.length)
+      console.log(data)
+      })
+
+
+
 }
 
 //listen for login method and respond with appropriate info

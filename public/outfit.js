@@ -5,24 +5,6 @@ var outfitArray=[];
 
 ////////////////////////////////DISPLAY IMAGES FUNCTION///////////////////////////////////////////
 
- // function caroselFunction(){
- //    $('.multi-item-carousel').carousel({
- //      interval: false
- //    });
- //    $('.multi-item-carousel .item').each(function(){
- //      var next = $(this).next();
- //      if (!next.length) {
- //        next = $(this).siblings(':first');
- //      }
- //      next.children(':first-child').clone().appendTo($(this));
- //      if (next.next().length>0) {
- //        next.next().children(':first-child').clone().appendTo($(this));
- //      } else {
- //        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
- //      }
- //    });
- //  };
-
 
 function DisplayImage(data){
 console.log(data)
@@ -93,8 +75,8 @@ console.log(matchId)
     url: "/erase/"+matchId,
          })
         .done(function(data) {
-            $("#modal-message").html("Your Outfit has been Deleted")
-            $("#myModal").modal("toggle");
+            $("#modal-message2").html("Your Outfit has been Deleted")
+            $("#myModal2").modal("toggle");
             $("#Carosel1").empty();
             //refer to camera-funtionality.js
             setTimeout(AutomaticClose,1350);

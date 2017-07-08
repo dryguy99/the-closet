@@ -12,11 +12,11 @@
     <title>About - Kelly's Closet</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> <!-- load fontawesome -->
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
@@ -58,13 +58,26 @@
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="index.html">Closet</a></li>
                     <li><a href="outfits.html">Outfits</a></li>
-                    <li><a href="/user">Login</a></li>
+                    <li id="navmodal1"></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
+    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-center">
+          <div id="tlogin">
+            <!-- modal content added here by jquery-->
+          </div>
+          <div class='mymodal'>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <div class="container">
 
@@ -81,7 +94,7 @@
                     <img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
                 </div>
                 <div class="col-md-6">
-                    <p>We’re four people from disparate backgrounds all brought together by a passion for technology and web development. Our paths through life all converged at one moment in time making Kelly’s Closet possible. A burning desire to become world-class coders lead the four of us to Rutgers Coding Bootcamp.</p> 
+                    <p>We’re four people from disparate backgrounds all brought together by a passion for technology and web development. Our paths through life all converged at one moment in time making Kelly’s Closet possible. A burning desire to become world-class coders lead the four of us to Rutgers Coding Bootcamp.</p>
 
                     <p>During our time together we’ve formed a strong appreciation for each other’s abilities, and our skill-sets fit perfectly together. Over the course of numerous projects together we naturally fell into our positions within the team. Alyssa and Kris on the front-end with an eye for UX/UI design, and Tim and Tom on the back-end handling everything from routes to databases. All of our hard work has culminated in the creation of Kelly’s Closet.  </p>
                 </div>
@@ -140,7 +153,7 @@
     </footer>
 
     <!-- jQuery -->
-    
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
