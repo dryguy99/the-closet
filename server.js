@@ -10,21 +10,7 @@ var upload = multer({dest: "./uploads"});
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var session      = require('express-session');
-
-//fix cors errors
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-      res.send(200);
-    }
-    else {
-      next();
-    }
-};
-app.use(allowCrossDomain);
+var configDB = require('./config/database.js');
 mongoose.Promise = Promise;
 
 
@@ -37,7 +23,7 @@ if (!process.env.MONGODB_URI){
     }
 require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
-
+//app.use(express.bodyParser({uploadDir:'./uploads'}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json())// parse application/json
 app.set('view engine', 'ejs'); // set up ejs for templating
@@ -65,5 +51,5 @@ require("./routes/images.js")(app);
 require("./routes/outfits.js")(app);
 
 app.listen(3000, function() {
-  console.log("The Magic happens on port "+ port);
+  console.log("The Magic running on port "+ port);
 });

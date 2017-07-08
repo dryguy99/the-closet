@@ -16,7 +16,7 @@ function download(){
   var download = document.getElementById("download");
   var image = document.getElementById("canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
   download.setAttribute("href", image);
-  setTimeout(saveImage,1000)
+  setTimeout(saveImage,1000);
 }
 
 
@@ -25,7 +25,7 @@ function download(){
     $('.multi-item-carousel').carousel({
       interval: false
     });
-    $('.multi-item-carousel .item').each(function(){
+     $('.multi-item-carousel .item').each(function(){
       var next = $(this).next();
       if (!next.length) {
         next = $(this).siblings(':first');
@@ -48,3 +48,5 @@ function SwipeCarosel(){
       $("#myCarousel").carousel('next');  
    });  
 }
+
+// '.multi-item-carousel .item'
