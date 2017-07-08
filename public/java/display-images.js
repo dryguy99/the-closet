@@ -2,27 +2,19 @@
 var index=0;
 
 
-function DisplayImage(data){  
+function DisplayImage(data){
   var shirtsArray = data[0];
   var pantsArray  = data[1];
   var shoesArray  = data[2];
   var noImage= '<div class="item active"><div class="col-xs-4"><h3>Please insert an image</h3></div></div>';
-  var SignIn= '<a href="/user"><div class="item active"><div class="col-xs-4"></div><div class="col-xs-4"><h3 class="text-center">Please Login</h3></div></div></a>';
   var itemActive = '<div class="item active"><div class="col-xs-4">';
   var item = '<div class="item"><div class="col-xs-4">';
   var  delHover= '<div class="middle"><div class="text">Delete</div></div></div>';
 
          ////////IF NO IMAGES IN THE CAROUSEL////
-      if
-        (data.length==4){$('#Carosel1').html(SignIn);}
-      
-      else{
-        if(shirtsArray.length==0){$('#Carosel1').html(noImage);}
-        if(pantsArray.length==0){$('#Carosel2').html(noImage);}
-        if(shoesArray.length==0){$('#Carosel3').html(noImage);}
-      }
-       
-     
+      if(shirtsArray.length==0){$('#Carosel1').html(noImage);}
+      if(pantsArray.length==0){$('#Carosel2').html(noImage);}
+      if(shoesArray.length==0){$('#Carosel3').html(noImage);}
 
         ////////CAROUSEL 1////
       for(var i = 0; i < shirtsArray.length; i++){
@@ -104,8 +96,6 @@ $("#Carosel3").empty();
         url: "/all"
       }).done(function(data) {
             DisplayImage(data);
-            // console.log(data.length)
-            console.log(data)
       })
   }
 
@@ -141,14 +131,12 @@ console.log(season)
 
 
 $(document).on("click", "img", function() {
-  // $('#test1').removeClass('col-md-12');
-  // $('#test2').removeClass('col-md-12');
-  // $('#post').removeClass('col-md-2');
-  // $(".small").removeClass('.col-md-1');
-  // $(".small").hide();
-  //$('#post').addClass('col-md-4');
-  // $('#test1').addClass('col-md-9');
-  // $('#test3').addClass('col-md-9');
+  $('#test1').removeClass('col-md-12');
+  $('#test2').removeClass('col-md-12');
+  $('#test3').removeClass('col-md-12');
+  $('#test2').addClass('col-md-9');
+  $('#test1').addClass('col-md-9');
+  $('#test3').addClass('col-md-9');
   $("#post").show();
   var imageID = $(this).attr("data-id");
   var name= $(this).attr("value")
@@ -211,12 +199,12 @@ var shoesID = $("#shoes").attr("data-id")
         $("#sidebar-pants").empty();
         $("#sidebar-shirts").empty();
         $("#post").hide();
-        // $('#test1').removeClass('col-md-9');
-        // $('#test2').removeClass('col-md-9');
-        // $('#test3').removeClass('col-md-9');
-        // $('#test1').addClass('col-md-12');
-        // $('#test2').addClass('col-md-12');
-        // $('#test3').addClass('col-md-12');
+        $('#test1').removeClass('col-md-9');
+        $('#test2').removeClass('col-md-9');
+        $('#test3').removeClass('col-md-9');
+        $('#test1').addClass('col-md-12');
+        $('#test2').addClass('col-md-12');
+        $('#test3').addClass('col-md-12');
       });
 })
 

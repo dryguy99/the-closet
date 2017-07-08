@@ -45,7 +45,7 @@ img {
 }
 
 #post{
-    height: 0px;
+    height: 0;
   }
 
   #pants,#shirts,#shoes{
@@ -54,4 +54,25 @@ img {
 
 .container{
   height: 30%;
+}
+
+img{
+  height:50px;
+  width:50px;
+  color: yellow;
+}
+
+piece:target{
+  display: block;
+}
+
+#sun{
+  color: yellow;
+}
+
+.dropdown-menu {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
 }
