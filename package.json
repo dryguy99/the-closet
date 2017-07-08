@@ -1,4 +1,5 @@
 {
+
   "name": "kellys-closet",
   "version": "2.0.0",
   "description": "organize your clothes by category and pic out your outfits virtually.  Look at the weather before choosing an outfit and save what clothing made up your outfits.",
@@ -14,11 +15,8 @@
     "url": "git+https://github.com/dryguy99/the-closet.git"
   },
   "author": "Tom Frazzitta,Timothy Dry, Alyssa Santopadre, Kris Jackson",
+
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dryguy99/the-closet/issues"
-  },
-  "homepage": "https://github.com/dryguy99/the-closet#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
@@ -41,9 +39,11 @@
     "passport-twitter": "^1.0.4",
     "sharp": "^0.18.2",
     "weather-js": "^2.0.0"
+
   },
   "engines": {
     "node": "6.11.0",
     "npm": "3.10.10"
+
   }
 }
