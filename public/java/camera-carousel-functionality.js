@@ -41,10 +41,12 @@ function download(){
 
 
 function SwipeCarosel(){
-   $('.multi-item-carousel .item').swiperight(function() {
-      $('.multi-item-carousel .item').carousel('prev');
-    });
-   $('.multi-item-carousel .item').swipeleft(function() {
-      $('.multi-item-carousel .item').carousel('next');
-   });
+   $("#myCarousel").swiperight(function() {  
+      $("#myCarousel").carousel('prev');  
+    });  
+   $("#myCarousel").swipeleft(function() {  
+      $("#myCarousel").carousel('next');  
+   });  
 }
+
+// '.multi-item-carousel .item'
