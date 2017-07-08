@@ -1102,7 +1102,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #337ab7;
   text-decoration: underline;
 }
 a:focus {
@@ -3115,7 +3115,7 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color:  #c2c2d6;
   border-color: #2e6da4;
 }
 .btn-primary:focus,
