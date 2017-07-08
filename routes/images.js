@@ -86,7 +86,7 @@ app.get("/all",function(req,res){
         messageArray="Please Log In";
         BigArray.push(shirtsArray,pantsArray,shoesArray,messageArray);
         res.send(BigArray)
-
+        
     }
     else{
     Image.find({userId: req.user._id}).exec(function(error,data){
