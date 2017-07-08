@@ -19,7 +19,7 @@ function DisplayImage(data){
               }
 
       for(var i = 0; i < data.length; i++){
-          (function(i){
+          (function(i){  
                 $.get('/uploads/' + data[i].Matches[0]).done(function(imgData1){
                 $.get('/uploads/' + data[i].Matches[1]).done(function(imgData2){
                 $.get('/uploads/' + data[i].Matches[2]).done(function(imgData3){
@@ -27,7 +27,7 @@ function DisplayImage(data){
 
               $('#Carosel1')
                 .append(itemActive+'<div data-id="'+data[i].outfitId+'" matches="'+data[i].Matches+'" ><img src="data:image/jpeg;base64,'+ imgData1 + '"class="img-responsive center-block" value="shirts"/><img src="data:image/jpeg;base64,'+ imgData2 + '"class="img-responsive center-block" value="shirts"/><img src="data:image/jpeg;base64,'+ imgData3 + '"class="img-responsive center-block" value="shirts"/>'+delHover2)
-
+                  
               }
               else{
 
@@ -40,7 +40,7 @@ function DisplayImage(data){
       })(i)
     };
  setTimeout(caroselFunction, 500);
-}
+}    
 
 
 $(document).ready(function(){Get();})
@@ -73,3 +73,10 @@ $(document).on("click", ".middle", function() {
               setTimeout(DisplayImage(data),1350);
           });
 });
+
+
+
+
+
+
+

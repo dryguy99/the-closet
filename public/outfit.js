@@ -29,6 +29,7 @@ console.log(data)
 console.log(data[0].outfitId)
 
 
+
 var noImage= '<div class="item active"><div class="col-xs-4"><h3>Save an Outfit from your closet</h3></div></div>';
 var itemActive = '<div class="item active"><div class="col-xs-4">';
 
@@ -74,6 +75,7 @@ $(document).ready(function(){Get();})
 $(document).on("click", "#all-images", function() { Get();})
 function Get(){
 $("#Carosel1").empty();
+
   $.ajax({
       method: "GET",
       url: "/single"
@@ -98,4 +100,5 @@ console.log(matchId)
             setTimeout(AutomaticClose,1350);
             setTimeout(DisplayImage(data),1350);
         });
+
 });

@@ -52,9 +52,16 @@ function AutomaticSend(){
     }
     /////IF NO FILE CANCEL FORM/////
     if(file.length>1){
-      $("#modal-message").html("Your Image is Saved")
+      // $("#modal-message").html("Your Image is Saved")
+      $("#modal-message").html("Please Submit all Requirements");
       $("#myModal").modal("toggle");
-      setTimeout(modal,1350)
+      //setTimeout(modal,1350)
     }
 }
+
+// $(document).on("click", "#file", function() {
+//    $("#myModal").modal("toggle");
+//   $("#modal-message").html("Your Image is Saved")
+//   })
+
 
